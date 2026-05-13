@@ -8,8 +8,7 @@ from sklearn.model_selection import train_test_split
 # for hugging face space authentication to upload files
 from huggingface_hub import login, HfApi
 
-from google.colab import userdata
-access_key = userdata.get("MY_API_KEY")
+access_key = os.getenv("HF_TOKEN")
 
 # Define constants for the dataset and output paths
 api = HfApi(token = access_key)

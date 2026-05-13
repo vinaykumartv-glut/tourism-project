@@ -2,8 +2,7 @@ from huggingface_hub.utils import RepositoryNotFoundError, HfHubHTTPError
 from huggingface_hub import HfApi, create_repo
 import os
 
-from google.colab import userdata
-access_key = userdata.get("MY_API_KEY")
+access_key = os.getenv("HF_TOKEN")
 
 repo_id = "vinaykumartv/tourism-project-data"
 repo_type = "dataset"
