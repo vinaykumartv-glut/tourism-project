@@ -13,7 +13,7 @@ access_key = os.getenv("HF_TOKEN")
 # Define constants for the dataset and output paths
 api = HfApi(token = access_key)
 DATASET_PATH = "hf://datasets/vinaykumartv/tourism-project-data/tourism.csv"
-bank_dataset = pd.read_csv(DATASET_PATH)
+data = pd.read_csv(DATASET_PATH)
 print("Dataset loaded successfully.")
 
 # Define the target variable for the classification task
@@ -25,10 +25,10 @@ numerical_columns = data.select_dtypes(exclude = "object").columns.tolist()
 categorical_columns = data.select_dtypes(include = "category").columns.tolist()
 
 # Define predictor matrix (X) using selected numeric and categorical features
-X = bank_dataset[numerical_columns + categorical_columns]
+X = data[numerical_columns + categorical_columns]
 
 # Define target variable
-y = bank_dataset[target]
+y = data[target]
 
 
 # Split dataset into train and test
