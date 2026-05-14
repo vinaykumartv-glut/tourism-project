@@ -89,7 +89,7 @@ print(classification_report(ytrain, y_pred_train))
 print(classification_report(ytest, y_pred_test))
 
 # Save best model
-joblib.dump(best_model, "best_churn_model.joblib")
+joblib.dump(best_model, "best_tourism_project_model.joblib")
 
 # Upload to Hugging Face
 repo_id = "vinaykumartv/tourism-project-model"
