@@ -28,10 +28,10 @@ ytrain = pd.read_csv(ytrain_path)
 ytest = pd.read_csv(ytest_path)
 
 # List of numerical features in the dataset
-numerical_columns = data.select_dtypes(exclude = "object").columns.tolist()
+numerical_columns = Xtrain.select_dtypes(exclude = "object").columns.tolist()
 
 # List of categorical features in the dataset
-categorical_columns = data.select_dtypes(include = "category").columns.tolist()
+categorical_columns = Xtrain.select_dtypes(include = "category").columns.tolist()
 
 # Set the clas weight to handle class imbalance
 class_weight = ytrain.value_counts()[0] / ytrain.value_counts()[1]
