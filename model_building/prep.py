@@ -13,7 +13,7 @@ access_key = os.getenv("HF_TOKEN")
 # Define constants for the dataset and output paths
 api = HfApi(token = access_key)
 DATASET_PATH = "hf://datasets/vinaykumartv/tourism-project-data/tourism.csv"
-data = pd.read_csv(DATASET_PATH)
+data = pd.read_csv(DATASET_PATH, index_col=0)
 print("Dataset loaded successfully.")
 
 # Define the target variable for the classification task
