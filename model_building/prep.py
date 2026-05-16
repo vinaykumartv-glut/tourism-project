@@ -30,6 +30,7 @@ X = data[numerical_columns + categorical_columns]
 # Define target variable
 y = data[target]
 
+X.drop(["CustomerID", target], axis = 1, inplace = True)
 
 # Split dataset into train and test
 # Split the dataset into training and test sets
